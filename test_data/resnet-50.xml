@@ -12,7 +12,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="1" name="Mul1_/Fused_Mul_1230712309_const" type="Const" version="opset1">
+		<layer id="1" name="bn_conv1/mean/Fused_Mul_1268212684_const" type="Const" version="opset1">
 			<data element_type="f32" offset="0" shape="64,3,7,7" size="37632"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -48,7 +48,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="3" name="data_add_11457/copy_const" type="Const" version="opset1">
+		<layer id="3" name="data_add_11832/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="37632" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -120,7 +120,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="7" name="Mul1_9865/Fused_Mul_1232312325_const" type="Const" version="opset1">
+		<layer id="7" name="bn2a_branch1/mean/Fused_Mul_1269812700_const" type="Const" version="opset1">
 			<data element_type="f32" offset="37888" shape="256,64,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -156,7 +156,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="9" name="data_add_1148411489/copy_const" type="Const" version="opset1">
+		<layer id="9" name="data_add_1185911864/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="103424" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -167,7 +167,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="10" name="Add1_9866/Fused_Add_" type="Add" version="opset1">
+		<layer id="10" name="bn2a_branch1/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -191,7 +191,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="11" name="Mul1_9877/Fused_Mul_1231112313_const" type="Const" version="opset1">
+		<layer id="11" name="bn2a_branch2a/mean/Fused_Mul_1268612688_const" type="Const" version="opset1">
 			<data element_type="f32" offset="104448" shape="64,64,1,1" size="16384"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -227,7 +227,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="13" name="data_add_1146011465/copy_const" type="Const" version="opset1">
+		<layer id="13" name="data_add_1183511840/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="120832" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -238,7 +238,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="14" name="Add1_9878/Fused_Add_" type="Add" version="opset1">
+		<layer id="14" name="bn2a_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -280,7 +280,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="16" name="Mul1_9889/Fused_Mul_1231512317_const" type="Const" version="opset1">
+		<layer id="16" name="bn2a_branch2b/mean/Fused_Mul_1269012692_const" type="Const" version="opset1">
 			<data element_type="f32" offset="121088" shape="64,64,3,3" size="147456"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -316,7 +316,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="18" name="data_add_1146811473/copy_const" type="Const" version="opset1">
+		<layer id="18" name="data_add_1184311848/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="268544" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -327,7 +327,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="19" name="Add1_9890/Fused_Add_" type="Add" version="opset1">
+		<layer id="19" name="bn2a_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -369,7 +369,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="21" name="Mul1_9901/Fused_Mul_1231912321_const" type="Const" version="opset1">
+		<layer id="21" name="bn2a_branch2c/mean/Fused_Mul_1269412696_const" type="Const" version="opset1">
 			<data element_type="f32" offset="268800" shape="256,64,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -405,7 +405,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="23" name="data_add_1147611481/copy_const" type="Const" version="opset1">
+		<layer id="23" name="data_add_1185111856/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="334336" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -416,7 +416,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="24" name="Add1_9902/Fused_Add_" type="Add" version="opset1">
+		<layer id="24" name="bn2a_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -482,7 +482,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="27" name="Mul1_9913/Fused_Mul_1232712329_const" type="Const" version="opset1">
+		<layer id="27" name="bn2b_branch2a/mean/Fused_Mul_1270212704_const" type="Const" version="opset1">
 			<data element_type="f32" offset="335360" shape="64,256,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -518,7 +518,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="29" name="data_add_1149211497/copy_const" type="Const" version="opset1">
+		<layer id="29" name="data_add_1186711872/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="400896" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -529,7 +529,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="30" name="Add1_9914/Fused_Add_" type="Add" version="opset1">
+		<layer id="30" name="bn2b_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -571,7 +571,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="32" name="Mul1_9925/Fused_Mul_1233112333_const" type="Const" version="opset1">
+		<layer id="32" name="bn2b_branch2b/mean/Fused_Mul_1270612708_const" type="Const" version="opset1">
 			<data element_type="f32" offset="401152" shape="64,64,3,3" size="147456"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -607,7 +607,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="34" name="data_add_1150011505/copy_const" type="Const" version="opset1">
+		<layer id="34" name="data_add_1187511880/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="548608" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -618,7 +618,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="35" name="Add1_9926/Fused_Add_" type="Add" version="opset1">
+		<layer id="35" name="bn2b_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -660,7 +660,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="37" name="Mul1_9937/Fused_Mul_1233512337_const" type="Const" version="opset1">
+		<layer id="37" name="bn2b_branch2c/mean/Fused_Mul_1271012712_const" type="Const" version="opset1">
 			<data element_type="f32" offset="548864" shape="256,64,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -696,7 +696,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="39" name="data_add_1150811513/copy_const" type="Const" version="opset1">
+		<layer id="39" name="data_add_1188311888/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="614400" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -707,7 +707,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="40" name="Add1_9938/Fused_Add_" type="Add" version="opset1">
+		<layer id="40" name="bn2b_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -773,7 +773,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="43" name="Pooling_13285" type="MaxPool" version="opset1">
+		<layer id="43" name="Pooling_13660" type="MaxPool" version="opset1">
 			<data kernel="1,1" pads_begin="0,0" pads_end="0,0" strides="2,2"/>
 			<input>
 				<port id="0">
@@ -792,7 +792,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="44" name="Mul1_9949/Fused_Mul_1233912341_const" type="Const" version="opset1">
+		<layer id="44" name="bn2c_branch2a/mean/Fused_Mul_1271412716_const" type="Const" version="opset1">
 			<data element_type="f32" offset="615424" shape="64,256,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -828,7 +828,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="46" name="data_add_1151611521/copy_const" type="Const" version="opset1">
+		<layer id="46" name="data_add_1189111896/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="680960" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -839,7 +839,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="47" name="Add1_9950/Fused_Add_" type="Add" version="opset1">
+		<layer id="47" name="bn2c_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -881,7 +881,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="49" name="Mul1_9961/Fused_Mul_1234312345_const" type="Const" version="opset1">
+		<layer id="49" name="bn2c_branch2b/mean/Fused_Mul_1271812720_const" type="Const" version="opset1">
 			<data element_type="f32" offset="681216" shape="64,64,3,3" size="147456"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -917,7 +917,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="51" name="data_add_1152411529/copy_const" type="Const" version="opset1">
+		<layer id="51" name="data_add_1189911904/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="828672" shape="1,64,1,1" size="256"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -928,7 +928,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="52" name="Add1_9962/Fused_Add_" type="Add" version="opset1">
+		<layer id="52" name="bn2c_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -970,7 +970,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="54" name="Mul1_9973/Fused_Mul_1234712349_const" type="Const" version="opset1">
+		<layer id="54" name="bn2c_branch2c/mean/Fused_Mul_1272212724_const" type="Const" version="opset1">
 			<data element_type="f32" offset="828928" shape="256,64,1,1" size="65536"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1006,7 +1006,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="56" name="data_add_1153211537/copy_const" type="Const" version="opset1">
+		<layer id="56" name="data_add_1190711912/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="894464" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1017,7 +1017,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="57" name="Add1_9974/Fused_Add_" type="Add" version="opset1">
+		<layer id="57" name="bn2c_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1083,7 +1083,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="60" name="Mul1_9985/Fused_Mul_1236312365_const" type="Const" version="opset1">
+		<layer id="60" name="bn3a_branch1/mean/Fused_Mul_1273812740_const" type="Const" version="opset1">
 			<data element_type="f32" offset="895488" shape="512,256,1,1" size="524288"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1119,7 +1119,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="62" name="data_add_1156411569/copy_const" type="Const" version="opset1">
+		<layer id="62" name="data_add_1193911944/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="1419776" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1130,7 +1130,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="63" name="Add1_9986/Fused_Add_" type="Add" version="opset1">
+		<layer id="63" name="bn3a_branch1/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1154,7 +1154,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="64" name="Mul1_9997/Fused_Mul_1235112353_const" type="Const" version="opset1">
+		<layer id="64" name="bn3a_branch2a/mean/Fused_Mul_1272612728_const" type="Const" version="opset1">
 			<data element_type="f32" offset="1421824" shape="128,256,1,1" size="131072"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1190,7 +1190,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="66" name="data_add_1154011545/copy_const" type="Const" version="opset1">
+		<layer id="66" name="data_add_1191511920/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="1552896" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1201,7 +1201,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="67" name="Add1_9998/Fused_Add_" type="Add" version="opset1">
+		<layer id="67" name="bn3a_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1243,7 +1243,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="69" name="Mul1_10009/Fused_Mul_1235512357_const" type="Const" version="opset1">
+		<layer id="69" name="bn3a_branch2b/mean/Fused_Mul_1273012732_const" type="Const" version="opset1">
 			<data element_type="f32" offset="1553408" shape="128,128,3,3" size="589824"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1279,7 +1279,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="71" name="data_add_1154811553/copy_const" type="Const" version="opset1">
+		<layer id="71" name="data_add_1192311928/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2143232" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1290,7 +1290,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="72" name="Add1_10010/Fused_Add_" type="Add" version="opset1">
+		<layer id="72" name="bn3a_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1332,7 +1332,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="74" name="Mul1_10021/Fused_Mul_1235912361_const" type="Const" version="opset1">
+		<layer id="74" name="bn3a_branch2c/mean/Fused_Mul_1273412736_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2143744" shape="512,128,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1368,7 +1368,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="76" name="data_add_1155611561/copy_const" type="Const" version="opset1">
+		<layer id="76" name="data_add_1193111936/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2405888" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1379,7 +1379,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="77" name="Add1_10022/Fused_Add_" type="Add" version="opset1">
+		<layer id="77" name="bn3a_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1445,7 +1445,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="80" name="Mul1_10033/Fused_Mul_1236712369_const" type="Const" version="opset1">
+		<layer id="80" name="bn3b_branch2a/mean/Fused_Mul_1274212744_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2407936" shape="128,512,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1481,7 +1481,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="82" name="data_add_1157211577/copy_const" type="Const" version="opset1">
+		<layer id="82" name="data_add_1194711952/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2670080" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1492,7 +1492,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="83" name="Add1_10034/Fused_Add_" type="Add" version="opset1">
+		<layer id="83" name="bn3b_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1534,7 +1534,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="85" name="Mul1_10045/Fused_Mul_1237112373_const" type="Const" version="opset1">
+		<layer id="85" name="bn3b_branch2b/mean/Fused_Mul_1274612748_const" type="Const" version="opset1">
 			<data element_type="f32" offset="2670592" shape="128,128,3,3" size="589824"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1570,7 +1570,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="87" name="data_add_1158011585/copy_const" type="Const" version="opset1">
+		<layer id="87" name="data_add_1195511960/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3260416" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1581,7 +1581,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="88" name="Add1_10046/Fused_Add_" type="Add" version="opset1">
+		<layer id="88" name="bn3b_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1623,7 +1623,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="90" name="Mul1_10057/Fused_Mul_1237512377_const" type="Const" version="opset1">
+		<layer id="90" name="bn3b_branch2c/mean/Fused_Mul_1275012752_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3260928" shape="512,128,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1659,7 +1659,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="92" name="data_add_1158811593/copy_const" type="Const" version="opset1">
+		<layer id="92" name="data_add_1196311968/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3523072" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1670,7 +1670,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="93" name="Add1_10058/Fused_Add_" type="Add" version="opset1">
+		<layer id="93" name="bn3b_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1736,7 +1736,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="96" name="Mul1_10069/Fused_Mul_1237912381_const" type="Const" version="opset1">
+		<layer id="96" name="bn3c_branch2a/mean/Fused_Mul_1275412756_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3525120" shape="128,512,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1772,7 +1772,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="98" name="data_add_1159611601/copy_const" type="Const" version="opset1">
+		<layer id="98" name="data_add_1197111976/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3787264" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1783,7 +1783,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="99" name="Add1_10070/Fused_Add_" type="Add" version="opset1">
+		<layer id="99" name="bn3c_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1825,7 +1825,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="101" name="Mul1_10081/Fused_Mul_1238312385_const" type="Const" version="opset1">
+		<layer id="101" name="bn3c_branch2b/mean/Fused_Mul_1275812760_const" type="Const" version="opset1">
 			<data element_type="f32" offset="3787776" shape="128,128,3,3" size="589824"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1861,7 +1861,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="103" name="data_add_1160411609/copy_const" type="Const" version="opset1">
+		<layer id="103" name="data_add_1197911984/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4377600" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1872,7 +1872,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="104" name="Add1_10082/Fused_Add_" type="Add" version="opset1">
+		<layer id="104" name="bn3c_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -1914,7 +1914,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="106" name="Mul1_10093/Fused_Mul_1238712389_const" type="Const" version="opset1">
+		<layer id="106" name="bn3c_branch2c/mean/Fused_Mul_1276212764_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4378112" shape="512,128,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1950,7 +1950,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="108" name="data_add_1161211617/copy_const" type="Const" version="opset1">
+		<layer id="108" name="data_add_1198711992/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4640256" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -1961,7 +1961,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="109" name="Add1_10094/Fused_Add_" type="Add" version="opset1">
+		<layer id="109" name="bn3c_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2027,7 +2027,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="112" name="Pooling_13283" type="MaxPool" version="opset1">
+		<layer id="112" name="Pooling_13658" type="MaxPool" version="opset1">
 			<data kernel="1,1" pads_begin="0,0" pads_end="0,0" strides="2,2"/>
 			<input>
 				<port id="0">
@@ -2046,7 +2046,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="113" name="Mul1_10105/Fused_Mul_1239112393_const" type="Const" version="opset1">
+		<layer id="113" name="bn3d_branch2a/mean/Fused_Mul_1276612768_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4642304" shape="128,512,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2082,7 +2082,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="115" name="data_add_1162011625/copy_const" type="Const" version="opset1">
+		<layer id="115" name="data_add_1199512000/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4904448" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2093,7 +2093,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="116" name="Add1_10106/Fused_Add_" type="Add" version="opset1">
+		<layer id="116" name="bn3d_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2135,7 +2135,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="118" name="Mul1_10117/Fused_Mul_1239512397_const" type="Const" version="opset1">
+		<layer id="118" name="bn3d_branch2b/mean/Fused_Mul_1277012772_const" type="Const" version="opset1">
 			<data element_type="f32" offset="4904960" shape="128,128,3,3" size="589824"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2171,7 +2171,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="120" name="data_add_1162811633/copy_const" type="Const" version="opset1">
+		<layer id="120" name="data_add_1200312008/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="5494784" shape="1,128,1,1" size="512"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2182,7 +2182,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="121" name="Add1_10118/Fused_Add_" type="Add" version="opset1">
+		<layer id="121" name="bn3d_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2224,7 +2224,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="123" name="Mul1_10129/Fused_Mul_1239912401_const" type="Const" version="opset1">
+		<layer id="123" name="bn3d_branch2c/mean/Fused_Mul_1277412776_const" type="Const" version="opset1">
 			<data element_type="f32" offset="5495296" shape="512,128,1,1" size="262144"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2260,7 +2260,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="125" name="data_add_1163611641/copy_const" type="Const" version="opset1">
+		<layer id="125" name="data_add_1201112016/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="5757440" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2271,7 +2271,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="126" name="Add1_10130/Fused_Add_" type="Add" version="opset1">
+		<layer id="126" name="bn3d_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2337,7 +2337,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="129" name="Mul1_10141/Fused_Mul_1241512417_const" type="Const" version="opset1">
+		<layer id="129" name="bn4a_branch1/mean/Fused_Mul_1279012792_const" type="Const" version="opset1">
 			<data element_type="f32" offset="5759488" shape="1024,512,1,1" size="2097152"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2373,7 +2373,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="131" name="data_add_1166811673/copy_const" type="Const" version="opset1">
+		<layer id="131" name="data_add_1204312048/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="7856640" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2384,7 +2384,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="132" name="Add1_10142/Fused_Add_" type="Add" version="opset1">
+		<layer id="132" name="bn4a_branch1/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2408,7 +2408,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="133" name="Mul1_10153/Fused_Mul_1240312405_const" type="Const" version="opset1">
+		<layer id="133" name="bn4a_branch2a/mean/Fused_Mul_1277812780_const" type="Const" version="opset1">
 			<data element_type="f32" offset="7860736" shape="256,512,1,1" size="524288"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2444,7 +2444,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="135" name="data_add_1164411649/copy_const" type="Const" version="opset1">
+		<layer id="135" name="data_add_1201912024/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="8385024" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2455,7 +2455,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="136" name="Add1_10154/Fused_Add_" type="Add" version="opset1">
+		<layer id="136" name="bn4a_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2497,7 +2497,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="138" name="Mul1_10165/Fused_Mul_1240712409_const" type="Const" version="opset1">
+		<layer id="138" name="bn4a_branch2b/mean/Fused_Mul_1278212784_const" type="Const" version="opset1">
 			<data element_type="f32" offset="8386048" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2533,7 +2533,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="140" name="data_add_1165211657/copy_const" type="Const" version="opset1">
+		<layer id="140" name="data_add_1202712032/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="10745344" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2544,7 +2544,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="141" name="Add1_10166/Fused_Add_" type="Add" version="opset1">
+		<layer id="141" name="bn4a_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2586,7 +2586,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="143" name="Mul1_10177/Fused_Mul_1241112413_const" type="Const" version="opset1">
+		<layer id="143" name="bn4a_branch2c/mean/Fused_Mul_1278612788_const" type="Const" version="opset1">
 			<data element_type="f32" offset="10746368" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2622,7 +2622,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="145" name="data_add_1166011665/copy_const" type="Const" version="opset1">
+		<layer id="145" name="data_add_1203512040/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="11794944" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2633,7 +2633,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="146" name="Add1_10178/Fused_Add_" type="Add" version="opset1">
+		<layer id="146" name="bn4a_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2699,7 +2699,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="149" name="Mul1_10189/Fused_Mul_1241912421_const" type="Const" version="opset1">
+		<layer id="149" name="bn4b_branch2a/mean/Fused_Mul_1279412796_const" type="Const" version="opset1">
 			<data element_type="f32" offset="11799040" shape="256,1024,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2735,7 +2735,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="151" name="data_add_1167611681/copy_const" type="Const" version="opset1">
+		<layer id="151" name="data_add_1205112056/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="12847616" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2746,7 +2746,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="152" name="Add1_10190/Fused_Add_" type="Add" version="opset1">
+		<layer id="152" name="bn4b_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2788,7 +2788,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="154" name="Mul1_10201/Fused_Mul_1242312425_const" type="Const" version="opset1">
+		<layer id="154" name="bn4b_branch2b/mean/Fused_Mul_1279812800_const" type="Const" version="opset1">
 			<data element_type="f32" offset="12848640" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2824,7 +2824,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="156" name="data_add_1168411689/copy_const" type="Const" version="opset1">
+		<layer id="156" name="data_add_1205912064/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="15207936" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2835,7 +2835,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="157" name="Add1_10202/Fused_Add_" type="Add" version="opset1">
+		<layer id="157" name="bn4b_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2877,7 +2877,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="159" name="Mul1_10213/Fused_Mul_1242712429_const" type="Const" version="opset1">
+		<layer id="159" name="bn4b_branch2c/mean/Fused_Mul_1280212804_const" type="Const" version="opset1">
 			<data element_type="f32" offset="15208960" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2913,7 +2913,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="161" name="data_add_1169211697/copy_const" type="Const" version="opset1">
+		<layer id="161" name="data_add_1206712072/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="16257536" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -2924,7 +2924,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="162" name="Add1_10214/Fused_Add_" type="Add" version="opset1">
+		<layer id="162" name="bn4b_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -2990,7 +2990,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="165" name="Mul1_10225/Fused_Mul_1243112433_const" type="Const" version="opset1">
+		<layer id="165" name="bn4c_branch2a/mean/Fused_Mul_1280612808_const" type="Const" version="opset1">
 			<data element_type="f32" offset="16261632" shape="256,1024,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3026,7 +3026,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="167" name="data_add_1170011705/copy_const" type="Const" version="opset1">
+		<layer id="167" name="data_add_1207512080/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="17310208" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3037,7 +3037,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="168" name="Add1_10226/Fused_Add_" type="Add" version="opset1">
+		<layer id="168" name="bn4c_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3079,7 +3079,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="170" name="Mul1_10237/Fused_Mul_1243512437_const" type="Const" version="opset1">
+		<layer id="170" name="bn4c_branch2b/mean/Fused_Mul_1281012812_const" type="Const" version="opset1">
 			<data element_type="f32" offset="17311232" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3115,7 +3115,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="172" name="data_add_1170811713/copy_const" type="Const" version="opset1">
+		<layer id="172" name="data_add_1208312088/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="19670528" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3126,7 +3126,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="173" name="Add1_10238/Fused_Add_" type="Add" version="opset1">
+		<layer id="173" name="bn4c_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3168,7 +3168,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="175" name="Mul1_10249/Fused_Mul_1243912441_const" type="Const" version="opset1">
+		<layer id="175" name="bn4c_branch2c/mean/Fused_Mul_1281412816_const" type="Const" version="opset1">
 			<data element_type="f32" offset="19671552" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3204,7 +3204,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="177" name="data_add_1171611721/copy_const" type="Const" version="opset1">
+		<layer id="177" name="data_add_1209112096/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="20720128" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3215,7 +3215,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="178" name="Add1_10250/Fused_Add_" type="Add" version="opset1">
+		<layer id="178" name="bn4c_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3281,7 +3281,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="181" name="Mul1_10261/Fused_Mul_1244312445_const" type="Const" version="opset1">
+		<layer id="181" name="bn4d_branch2a/mean/Fused_Mul_1281812820_const" type="Const" version="opset1">
 			<data element_type="f32" offset="20724224" shape="256,1024,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3317,7 +3317,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="183" name="data_add_1172411729/copy_const" type="Const" version="opset1">
+		<layer id="183" name="data_add_1209912104/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="21772800" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3328,7 +3328,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="184" name="Add1_10262/Fused_Add_" type="Add" version="opset1">
+		<layer id="184" name="bn4d_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3370,7 +3370,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="186" name="Mul1_10273/Fused_Mul_1244712449_const" type="Const" version="opset1">
+		<layer id="186" name="bn4d_branch2b/mean/Fused_Mul_1282212824_const" type="Const" version="opset1">
 			<data element_type="f32" offset="21773824" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3406,7 +3406,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="188" name="data_add_1173211737/copy_const" type="Const" version="opset1">
+		<layer id="188" name="data_add_1210712112/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="24133120" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3417,7 +3417,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="189" name="Add1_10274/Fused_Add_" type="Add" version="opset1">
+		<layer id="189" name="bn4d_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3459,7 +3459,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="191" name="Mul1_10285/Fused_Mul_1245112453_const" type="Const" version="opset1">
+		<layer id="191" name="bn4d_branch2c/mean/Fused_Mul_1282612828_const" type="Const" version="opset1">
 			<data element_type="f32" offset="24134144" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3495,7 +3495,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="193" name="data_add_1174011745/copy_const" type="Const" version="opset1">
+		<layer id="193" name="data_add_1211512120/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="25182720" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3506,7 +3506,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="194" name="Add1_10286/Fused_Add_" type="Add" version="opset1">
+		<layer id="194" name="bn4d_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3572,7 +3572,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="197" name="Mul1_10297/Fused_Mul_1245512457_const" type="Const" version="opset1">
+		<layer id="197" name="bn4e_branch2a/mean/Fused_Mul_1283012832_const" type="Const" version="opset1">
 			<data element_type="f32" offset="25186816" shape="256,1024,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3608,7 +3608,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="199" name="data_add_1174811753/copy_const" type="Const" version="opset1">
+		<layer id="199" name="data_add_1212312128/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="26235392" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3619,7 +3619,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="200" name="Add1_10298/Fused_Add_" type="Add" version="opset1">
+		<layer id="200" name="bn4e_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3661,7 +3661,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="202" name="Mul1_10309/Fused_Mul_1245912461_const" type="Const" version="opset1">
+		<layer id="202" name="bn4e_branch2b/mean/Fused_Mul_1283412836_const" type="Const" version="opset1">
 			<data element_type="f32" offset="26236416" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3697,7 +3697,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="204" name="data_add_1175611761/copy_const" type="Const" version="opset1">
+		<layer id="204" name="data_add_1213112136/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="28595712" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3708,7 +3708,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="205" name="Add1_10310/Fused_Add_" type="Add" version="opset1">
+		<layer id="205" name="bn4e_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3750,7 +3750,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="207" name="Mul1_10321/Fused_Mul_1246312465_const" type="Const" version="opset1">
+		<layer id="207" name="bn4e_branch2c/mean/Fused_Mul_1283812840_const" type="Const" version="opset1">
 			<data element_type="f32" offset="28596736" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3786,7 +3786,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="209" name="data_add_1176411769/copy_const" type="Const" version="opset1">
+		<layer id="209" name="data_add_1213912144/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="29645312" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3797,7 +3797,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="210" name="Add1_10322/Fused_Add_" type="Add" version="opset1">
+		<layer id="210" name="bn4e_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3882,7 +3882,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="214" name="Mul1_10333/Fused_Mul_1246712469_const" type="Const" version="opset1">
+		<layer id="214" name="bn4f_branch2a/mean/Fused_Mul_1284212844_const" type="Const" version="opset1">
 			<data element_type="f32" offset="29649408" shape="256,1024,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3918,7 +3918,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="216" name="data_add_1177211777/copy_const" type="Const" version="opset1">
+		<layer id="216" name="data_add_1214712152/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="30697984" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -3929,7 +3929,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="217" name="Add1_10334/Fused_Add_" type="Add" version="opset1">
+		<layer id="217" name="bn4f_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -3971,7 +3971,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="219" name="Mul1_10345/Fused_Mul_1247112473_const" type="Const" version="opset1">
+		<layer id="219" name="bn4f_branch2b/mean/Fused_Mul_1284612848_const" type="Const" version="opset1">
 			<data element_type="f32" offset="30699008" shape="256,256,3,3" size="2359296"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4007,7 +4007,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="221" name="data_add_1178011785/copy_const" type="Const" version="opset1">
+		<layer id="221" name="data_add_1215512160/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="33058304" shape="1,256,1,1" size="1024"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4018,7 +4018,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="222" name="Add1_10346/Fused_Add_" type="Add" version="opset1">
+		<layer id="222" name="bn4f_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4060,7 +4060,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="224" name="Mul1_10357/Fused_Mul_1247512477_const" type="Const" version="opset1">
+		<layer id="224" name="bn4f_branch2c/mean/Fused_Mul_1285012852_const" type="Const" version="opset1">
 			<data element_type="f32" offset="33059328" shape="1024,256,1,1" size="1048576"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4096,7 +4096,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="226" name="data_add_1178811793/copy_const" type="Const" version="opset1">
+		<layer id="226" name="data_add_1216312168/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="34107904" shape="1,1024,1,1" size="4096"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4107,7 +4107,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="227" name="Add1_10358/Fused_Add_" type="Add" version="opset1">
+		<layer id="227" name="bn4f_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4173,7 +4173,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="230" name="Mul1_10369/Fused_Mul_1249112493_const" type="Const" version="opset1">
+		<layer id="230" name="bn5a_branch1/mean/Fused_Mul_1286612868_const" type="Const" version="opset1">
 			<data element_type="f32" offset="34112000" shape="2048,1024,1,1" size="8388608"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4209,7 +4209,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="232" name="data_add_1182011825/copy_const" type="Const" version="opset1">
+		<layer id="232" name="data_add_1219512200/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="42500608" shape="1,2048,1,1" size="8192"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4220,7 +4220,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="233" name="Add1_10370/Fused_Add_" type="Add" version="opset1">
+		<layer id="233" name="bn5a_branch1/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4244,7 +4244,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="234" name="Mul1_10381/Fused_Mul_1247912481_const" type="Const" version="opset1">
+		<layer id="234" name="bn5a_branch2a/mean/Fused_Mul_1285412856_const" type="Const" version="opset1">
 			<data element_type="f32" offset="42508800" shape="512,1024,1,1" size="2097152"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4280,7 +4280,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="236" name="data_add_1179611801/copy_const" type="Const" version="opset1">
+		<layer id="236" name="data_add_1217112176/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="44605952" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4291,7 +4291,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="237" name="Add1_10382/Fused_Add_" type="Add" version="opset1">
+		<layer id="237" name="bn5a_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4333,7 +4333,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="239" name="Mul1_10393/Fused_Mul_1248312485_const" type="Const" version="opset1">
+		<layer id="239" name="bn5a_branch2b/mean/Fused_Mul_1285812860_const" type="Const" version="opset1">
 			<data element_type="f32" offset="44608000" shape="512,512,3,3" size="9437184"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4369,7 +4369,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="241" name="data_add_1180411809/copy_const" type="Const" version="opset1">
+		<layer id="241" name="data_add_1217912184/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="54045184" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4380,7 +4380,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="242" name="Add1_10394/Fused_Add_" type="Add" version="opset1">
+		<layer id="242" name="bn5a_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4422,7 +4422,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="244" name="Mul1_10405/Fused_Mul_1248712489_const" type="Const" version="opset1">
+		<layer id="244" name="bn5a_branch2c/mean/Fused_Mul_1286212864_const" type="Const" version="opset1">
 			<data element_type="f32" offset="54047232" shape="2048,512,1,1" size="4194304"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4458,7 +4458,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="246" name="data_add_1181211817/copy_const" type="Const" version="opset1">
+		<layer id="246" name="data_add_1218712192/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="58241536" shape="1,2048,1,1" size="8192"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4469,7 +4469,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="247" name="Add1_10406/Fused_Add_" type="Add" version="opset1">
+		<layer id="247" name="bn5a_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4535,7 +4535,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="250" name="Mul1_10417/Fused_Mul_1249512497_const" type="Const" version="opset1">
+		<layer id="250" name="bn5b_branch2a/mean/Fused_Mul_1287012872_const" type="Const" version="opset1">
 			<data element_type="f32" offset="58249728" shape="512,2048,1,1" size="4194304"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4571,7 +4571,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="252" name="data_add_1182811833/copy_const" type="Const" version="opset1">
+		<layer id="252" name="data_add_1220312208/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="62444032" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4582,7 +4582,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="253" name="Add1_10418/Fused_Add_" type="Add" version="opset1">
+		<layer id="253" name="bn5b_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4624,7 +4624,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="255" name="Mul1_10429/Fused_Mul_1249912501_const" type="Const" version="opset1">
+		<layer id="255" name="bn5b_branch2b/mean/Fused_Mul_1287412876_const" type="Const" version="opset1">
 			<data element_type="f32" offset="62446080" shape="512,512,3,3" size="9437184"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4660,7 +4660,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="257" name="data_add_1183611841/copy_const" type="Const" version="opset1">
+		<layer id="257" name="data_add_1221112216/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="71883264" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4671,7 +4671,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="258" name="Add1_10430/Fused_Add_" type="Add" version="opset1">
+		<layer id="258" name="bn5b_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4713,7 +4713,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="260" name="Mul1_10441/Fused_Mul_1250312505_const" type="Const" version="opset1">
+		<layer id="260" name="bn5b_branch2c/mean/Fused_Mul_1287812880_const" type="Const" version="opset1">
 			<data element_type="f32" offset="71885312" shape="2048,512,1,1" size="4194304"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4749,7 +4749,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="262" name="data_add_1184411849/copy_const" type="Const" version="opset1">
+		<layer id="262" name="data_add_1221912224/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="76079616" shape="1,2048,1,1" size="8192"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4760,7 +4760,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="263" name="Add1_10442/Fused_Add_" type="Add" version="opset1">
+		<layer id="263" name="bn5b_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4826,7 +4826,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="266" name="Mul1_10453/Fused_Mul_1250712509_const" type="Const" version="opset1">
+		<layer id="266" name="bn5c_branch2a/mean/Fused_Mul_1288212884_const" type="Const" version="opset1">
 			<data element_type="f32" offset="76087808" shape="512,2048,1,1" size="4194304"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4862,7 +4862,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="268" name="data_add_1185211857/copy_const" type="Const" version="opset1">
+		<layer id="268" name="data_add_1222712232/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="80282112" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4873,7 +4873,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="269" name="Add1_10454/Fused_Add_" type="Add" version="opset1">
+		<layer id="269" name="bn5c_branch2a/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -4915,7 +4915,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="271" name="Mul1_10465/Fused_Mul_1251112513_const" type="Const" version="opset1">
+		<layer id="271" name="bn5c_branch2b/mean/Fused_Mul_1288612888_const" type="Const" version="opset1">
 			<data element_type="f32" offset="80284160" shape="512,512,3,3" size="9437184"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4951,7 +4951,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="273" name="data_add_1186011865/copy_const" type="Const" version="opset1">
+		<layer id="273" name="data_add_1223512240/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="89721344" shape="1,512,1,1" size="2048"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -4962,7 +4962,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="274" name="Add1_10466/Fused_Add_" type="Add" version="opset1">
+		<layer id="274" name="bn5c_branch2b/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -5004,7 +5004,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="276" name="Mul1_10477/Fused_Mul_1251512517_const" type="Const" version="opset1">
+		<layer id="276" name="bn5c_branch2c/mean/Fused_Mul_1289012892_const" type="Const" version="opset1">
 			<data element_type="f32" offset="89723392" shape="2048,512,1,1" size="4194304"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -5040,7 +5040,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="278" name="data_add_1186811873/copy_const" type="Const" version="opset1">
+		<layer id="278" name="data_add_1224312248/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="93917696" shape="1,2048,1,1" size="8192"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -5051,7 +5051,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="279" name="Add1_10478/Fused_Add_" type="Add" version="opset1">
+		<layer id="279" name="bn5c_branch2c/variance/Fused_Add_" type="Add" version="opset1">
 			<input>
 				<port id="0">
 					<dim>1</dim>
@@ -5136,7 +5136,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="283" name="fc1000/flatten_fc_input/Cast_116453_const" type="Const" version="opset1">
+		<layer id="283" name="fc1000/flatten_fc_input/Cast_117046_const" type="Const" version="opset1">
 			<data element_type="i64" offset="93925888" shape="2" size="16"/>
 			<output>
 				<port id="1" precision="I64">
@@ -5164,7 +5164,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="285" name="fc1000/WithoutBiases/1_port_transpose14706_const" type="Const" version="opset1">
+		<layer id="285" name="fc1000/WithoutBiases/1_port_transpose14972_const" type="Const" version="opset1">
 			<data element_type="f32" offset="93925904" shape="1000,2048" size="8192000"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -5192,7 +5192,7 @@
 				</port>
 			</output>
 		</layer>
-		<layer id="287" name="479/Output_0/Data_/copy_const" type="Const" version="opset1">
+		<layer id="287" name="428/Output_0/Data_/copy_const" type="Const" version="opset1">
 			<data element_type="f32" offset="102117904" shape="1,1000" size="4000"/>
 			<output>
 				<port id="1" precision="FP32">
@@ -5552,7 +5552,7 @@
 		<edge from-layer="289" from-port="1" to-layer="290" to-port="0"/>
 	</edges>
 	<meta_data>
-		<MO_version value="2020.1.0-61-gd349c3ba4a"/>
+		<MO_version value="2020.2.0-60-g0bc66e26ff"/>
 		<cli_parameters>
 			<blobs_as_inputs value="True"/>
 			<caffe_parser_path value="DIR"/>
@@ -5560,6 +5560,7 @@
 			<disable_nhwc_to_nchw value="False"/>
 			<disable_omitting_optional value="False"/>
 			<disable_resnet_optimization value="False"/>
+			<disable_weights_compression value="False"/>
 			<enable_concat_optimization value="False"/>
 			<enable_flattening_nested_params value="False"/>
 			<enable_ssd_gluoncv value="False"/>
@@ -5591,7 +5592,7 @@
 			<scale_values value="()"/>
 			<silent value="False"/>
 			<stream_output value="False"/>
-			<unset unset_cli_parameters="batch, counts, disable_fusing, disable_gfusing, finegrain_fusing, input, input_checkpoint, input_meta_graph, input_shape, input_symbol, mean_file, mean_file_offsets, nd_prefix_name, output, placeholder_shapes, pretrained_model_name, saved_model_dir, saved_model_tags, scale, tensorboard_logdir, tensorflow_custom_layer_libraries, tensorflow_custom_operations_config_update, tensorflow_object_detection_api_pipeline_config, tensorflow_operation_patterns, tensorflow_subgraph_patterns, tensorflow_use_custom_operations_config, transformations_config"/>
+			<unset unset_cli_parameters="batch, counts, disable_fusing, disable_gfusing, finegrain_fusing, input, input_checkpoint, input_meta_graph, input_shape, input_symbol, mean_file, mean_file_offsets, nd_prefix_name, output, placeholder_shapes, pretrained_model_name, saved_model_dir, saved_model_tags, scale, tensorboard_logdir, tensorflow_custom_layer_libraries, tensorflow_custom_operations_config_update, tensorflow_object_detection_api_pipeline_config, tensorflow_use_custom_operations_config, transformations_config"/>
 		</cli_parameters>
 	</meta_data>
 </net>
