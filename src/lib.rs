@@ -13,6 +13,9 @@ mod tests {
     use std::mem;
     use std::ffi::{CString};
     use std::os::raw::c_char;
+    use std::os::raw::c_void;
+    use std::ptr;
+    use rulinalg::utils;
 
     #[test]
     fn inference_of_network_gives_correct_result() {
@@ -20,8 +23,21 @@ mod tests {
         let config_file_ptr: *const c_char = config_file.as_ptr();
         let img = image::open("test_data/cat.png").unwrap();
         let bgr_img = img.to_bgr();
+        let width = bgr_img.width() as usize;
+        let height = bgr_img.height() as usize;
+        let channels = 3 as usize;
         let raw_pixels: &Vec<u8> = &bgr_img.into_raw();
-   
+        let len = (channels*width*height) as usize; 
+        let mut raw_pixels_f32: Vec<f32> = Vec::with_capacity(len);
+        raw_pixels_f32.resize(len, 0.0);
+        for c in 0..channels {
+            for h in 0..height {
+                for w in 0..width {
+                    raw_pixels_f32[c * width * height + h * width + w] = raw_pixels[h * channels * width + w*channels + c] as f32;
+                }
+            }
+        }
+
         unsafe {
             let mut core: *mut ie_core_t = mem::zeroed();
             let status = ie_core_create(config_file_ptr, &mut core as *mut *mut ie_core_t);
@@ -73,15 +89,32 @@ mod tests {
 
             let dims: dimensions = dimensions_t{
                 ranks: 4,
-                dims: [1,3,224,224,0,0,0,0] 
+                dims: [1, channels as u64, height as u64, width as u64,0,0,0,0] 
             };
             let tensor_desc: tensor_desc_t = tensor_desc_t{
                 layout: layout_e_NHWC,
                 dims: dims,
-                precision: precision_e_U8};
-            let size = 3*224*224;
+                precision: precision_e_FP32};
+            let size:u64 = (channels * height * width * 4)as u64;
             let mut input: *mut ie_blob_t = mem::zeroed();
-            ie_blob_make_memory_from_preallocated(&tensor_desc as *const tensor_desc_t, raw_pixels, size, &mut input as *mut *mut ie_blob_t);
+            let data = raw_pixels_f32.as_ptr() as *mut c_void;
+            let status = ie_blob_make_memory_from_preallocated(&tensor_desc as *const tensor_desc_t, data, size, &mut input as *mut *mut ie_blob_t);
+            match status {
+                s if s == (IEStatusCode_GENERAL_ERROR as _) => panic!("GENERAL_ERROR"),
+                s if s == (IEStatusCode_UNEXPECTED as _) => panic!("UNEXPECTED"),
+                s if s == (IEStatusCode_OK as _) => {},
+                s => panic!("Unknown return value = {}", s),
+            }
+
+            let input_name = CString::new("data").unwrap();
+            let input_name_ptr: *const c_char = input_name.as_ptr();
+            let status = ie_infer_request_set_blob(infer_request, input_name_ptr, input);
+            match status {
+                s if s == (IEStatusCode_GENERAL_ERROR as _) => panic!("GENERAL_ERROR"),
+                s if s == (IEStatusCode_UNEXPECTED as _) => panic!("UNEXPECTED"),
+                s if s == (IEStatusCode_OK as _) => {},
+                s => panic!("Unknown return value = {}", s),
+            }
 
             let status = ie_infer_request_infer(infer_request);
             match status {
@@ -101,6 +134,27 @@ mod tests {
                 s if s == (IEStatusCode_UNEXPECTED as _) => panic!("UNEXPECTED"),
                 s if s == (IEStatusCode_OK as _) => {},
                 s => panic!("Unknown return value = {}", s),
+            }
+
+            let mut output_buffer = ie_blob_buffer_t{
+                __bindgen_anon_1: ie_blob_buffer__bindgen_ty_1 {
+                    buffer: std::ptr::null_mut(),
+                    //cbuffer: std::ptr::null_mut()
+                }
+            };
+            let status = ie_blob_get_cbuffer(output_blob, &mut output_buffer as *mut ie_blob_buffer_t);
+            match status {
+                s if s == (IEStatusCode_GENERAL_ERROR as _) => panic!("GENERAL_ERROR"),
+                s if s == (IEStatusCode_UNEXPECTED as _) => panic!("UNEXPECTED"),
+                s if s == (IEStatusCode_OK as _) => {},
+                s => panic!("Unknown return value = {}", s),
+            }
+            let mut v: Vec<f32> = Vec::with_capacity(1000);
+            v.set_len(1000);
+            ptr::copy(output_buffer.__bindgen_anon_1.cbuffer as *const f32, v.as_mut_ptr(), 1000);
+            let c = utils::argmax(&v);
+            if c.0 != 283 {
+                panic!("Wrong class = {}, {}: {}", c.0, c.1, v[283]);
             }
         }
     }
