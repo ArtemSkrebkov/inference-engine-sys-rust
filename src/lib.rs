@@ -4,6 +4,8 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
+extern crate image;
+
 #[cfg(test)]
 
 mod tests {
@@ -16,6 +18,9 @@ mod tests {
     fn inference_of_network_gives_correct_result() {
         let config_file = CString::new("").unwrap();
         let config_file_ptr: *const c_char = config_file.as_ptr();
+        let img = image::open("test_data/cat.png").unwrap();
+        let bgr_img = img.to_bgr();
+        let raw_pixels: &Vec<u8> = &bgr_img.into_raw();
    
         unsafe {
             let mut core: *mut ie_core_t = mem::zeroed();
@@ -26,9 +31,9 @@ mod tests {
                 s => panic!("Unknown return value = {}", s),
             }
            
-            let input_model = CString::new("/home/artem/intel/openvino_2020.1.023/deployment_tools/model_optimizer/resnet-50.xml").unwrap();
+            let input_model = CString::new("test_data/resnet-50.xml").unwrap();
             let input_model_ptr: *const c_char = input_model.as_ptr();
-            let input_weights = CString::new("/home/artem/intel/openvino_2020.1.023/deployment_tools/model_optimizer/resnet-50.bin").unwrap();
+            let input_weights = CString::new("test_data/resnet-50.bin").unwrap();
             let input_weights_ptr: *const c_char = input_weights.as_ptr();
             let mut network: *mut ie_network_t = mem::zeroed();
             let status = ie_core_read_network(core, input_model_ptr,
@@ -66,6 +71,18 @@ mod tests {
                 s => panic!("Unknown return value = {}", s),
             }
 
+            let dims: dimensions = dimensions_t{
+                ranks: 4,
+                dims: [1,3,224,224,0,0,0,0] 
+            };
+            let tensor_desc: tensor_desc_t = tensor_desc_t{
+                layout: layout_e_NHWC,
+                dims: dims,
+                precision: precision_e_U8};
+            let size = 3*224*224;
+            let mut input: *mut ie_blob_t = mem::zeroed();
+            ie_blob_make_memory_from_preallocated(&tensor_desc as *const tensor_desc_t, raw_pixels, size, &mut input as *mut *mut ie_blob_t);
+
             let status = ie_infer_request_infer(infer_request);
             match status {
                 s if s == (IEStatusCode_GENERAL_ERROR as _) => panic!("GENERAL_ERROR"),
@@ -85,9 +102,6 @@ mod tests {
                 s if s == (IEStatusCode_OK as _) => {},
                 s => panic!("Unknown return value = {}", s),
             }
-
-
-
         }
     }
 }
