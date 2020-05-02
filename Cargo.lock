@@ -279,6 +279,8 @@ version = "0.1.0"
 dependencies = [
  "bindgen",
  "image",
+ "ndarray",
+ "ndarray-image",
  "rulinalg",
 ]
 
@@ -289,6 +291,15 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1cdb29978cc5797bd8dcc8e5bf7de604891df2a8dc576973d71a281e916db2ff"
 dependencies = [
  "adler32",
+]
+
+[[package]]
+name = "itertools"
+version = "0.8.2"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "f56a2d0bc861f9165be4eb3442afd3c236d8a98afd426f65d92324ae1091a484"
+dependencies = [
+ "either",
 ]
 
 [[package]]
@@ -350,7 +361,16 @@ version = "0.1.15"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "dcad67dcec2d58ff56f6292582377e6921afdf3bfbd533e26fb8900ae575e002"
 dependencies = [
- "rawpointer",
+ "rawpointer 0.1.0",
+]
+
+[[package]]
+name = "matrixmultiply"
+version = "0.2.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "d4f7ec66360130972f34830bfad9ef05c6610a43938a467bcc9ab9369ab3478f"
+dependencies = [
+ "rawpointer 0.2.1",
 ]
 
 [[package]]
@@ -384,6 +404,30 @@ dependencies = [
 ]
 
 [[package]]
+name = "ndarray"
+version = "0.13.0"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "25b001fc2f5df269365fb77bd8396ce6b1f61c9848f7f088c25e57494bacc57b"
+dependencies = [
+ "itertools",
+ "matrixmultiply 0.2.3",
+ "num-complex",
+ "num-integer",
+ "num-traits",
+ "rawpointer 0.2.1",
+]
+
+[[package]]
+name = "ndarray-image"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "4017a92a6315e24be0e00138999f7424736b6f2f56e6dc3fce1816b03019d88e"
+dependencies = [
+ "image",
+ "ndarray",
+]
+
+[[package]]
 name = "nom"
 version = "5.1.1"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -401,6 +445,16 @@ checksum = "4703ad64153382334aa8db57c637364c322d3372e097840c72000dabdcf6156e"
 dependencies = [
  "num-integer",
  "num-iter",
+ "num-traits",
+]
+
+[[package]]
+name = "num-complex"
+version = "0.2.4"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "b6b19411a9719e753aff12e5187b74d60d3dc449ec3f4dc21e3989c3f554bc95"
+dependencies = [
+ "autocfg",
  "num-traits",
 ]
 
@@ -504,6 +558,12 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "ebac11a9d2e11f2af219b8b8d833b76b1ea0e054aa0e8d8e9e4cbde353bdf019"
 
 [[package]]
+name = "rawpointer"
+version = "0.2.1"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "60a357793950651c4ed0f3f52338f53b2f809f32d83a07f72909fa13e4c6c1e3"
+
+[[package]]
 name = "rayon"
 version = "1.3.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -551,7 +611,7 @@ version = "0.4.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "04ada202c9685e1d72a7420c578e92b358dbf807d3dfabb676a3dab9cc3bb12f"
 dependencies = [
- "matrixmultiply",
+ "matrixmultiply 0.1.15",
  "num",
 ]
 

@@ -5,6 +5,7 @@
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
 extern crate image;
+extern crate ndarray;
 
 #[cfg(test)]
 
@@ -16,24 +17,36 @@ mod tests {
     use std::os::raw::c_void;
     use std::ptr;
     use rulinalg::utils;
+    use ndarray_image;
+    use ndarray::prelude::*;
 
     #[test]
     fn inference_of_network_gives_correct_result() {
         let config_file = CString::new("").unwrap();
         let config_file_ptr: *const c_char = config_file.as_ptr();
-        let img = image::open("test_data/cat.png").unwrap();
-        let bgr_img = img.to_bgr();
-        let width = bgr_img.width() as usize;
-        let height = bgr_img.height() as usize;
-        let channels = 3 as usize;
-        let raw_pixels: &Vec<u8> = &bgr_img.into_raw();
-        let len = (channels*width*height) as usize; 
+        let input_image = ndarray_image::open_image("test_data/cat.png", ndarray_image::Colors::Bgr)
+                                .unwrap();//.into_shape((3, 224, 224)).unwrap();
+        let dims = input_image.dim();
+        let width = dims.0;
+        let height = dims.1;
+        let channels = dims.2;
+        let len = width * height * channels;
+                
+        let mut input_image_f32 = Array3::<f32>::zeros((channels, height, width).f());
+        for c in 0..channels {
+            for h in 0..height {
+                for w in 0..width {
+                    input_image_f32[[c, h, w]] = input_image[[h, w, c]] as f32;
+                }
+            }
+        }
+
         let mut raw_pixels_f32: Vec<f32> = Vec::with_capacity(len);
         raw_pixels_f32.resize(len, 0.0);
         for c in 0..channels {
             for h in 0..height {
                 for w in 0..width {
-                    raw_pixels_f32[c * width * height + h * width + w] = raw_pixels[h * channels * width + w*channels + c] as f32;
+                    raw_pixels_f32[c * width * height + h * width + w] = input_image_f32[[c, h, w]];
                 }
             }
         }
@@ -139,7 +152,6 @@ mod tests {
             let mut output_buffer = ie_blob_buffer_t{
                 __bindgen_anon_1: ie_blob_buffer__bindgen_ty_1 {
                     buffer: std::ptr::null_mut(),
-                    //cbuffer: std::ptr::null_mut()
                 }
             };
             let status = ie_blob_get_cbuffer(output_blob, &mut output_buffer as *mut ie_blob_buffer_t);
