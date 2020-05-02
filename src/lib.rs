@@ -4,7 +4,6 @@
 
 include!(concat!(env!("OUT_DIR"), "/bindings.rs"));
 
-extern crate image;
 extern crate ndarray;
 
 #[cfg(test)]

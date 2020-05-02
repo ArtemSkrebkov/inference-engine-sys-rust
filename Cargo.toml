@@ -1,5 +1,5 @@
 [package]
-name = "inference-engine-rust"
+name = "inference-engine-sys-rust"
 version = "0.1.0"
 authors = ["ArtemSkrebkov <skrebkov.art@gmail.com>"]
 edition = "2018"
